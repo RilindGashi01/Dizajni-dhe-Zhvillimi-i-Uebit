@@ -1,0 +1,492 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color:  #E8D8C3;
+}
+header {
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
+}
+.header-container{
+    margin: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    float: left;
+    margin: 0;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    transition: 0.1s ease;
+}
+.header-links:hover{
+    color: #5b5858;
+    text-decoration: underline;
+}
+
+footer {
+    position: fixed;
+    bottom: 2%;
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+}
+.footer-container{
+    display: flex;
+    justify-content: space-evenly;
+}
+footer p {
+    margin: 5px 0;
+}
+.text{
+    width: 40%;
+    margin: 90px auto;
+    display: block;
+}
+.first-h3{
+    color: #5c0a0a;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+}
+.main-h1{
+    font-size: 40px;
+    text-align: center;
+    color: black;
+    font-family: 'Chivo', sans-serif;
+    font-family: 'Oswald', sans-serif;
+}
+.paragraph{
+    color: black;
+    text-align: center;
+    font-family: 'Chivo', sans-serif;
+    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Oswald', sans-serif;
+}
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+    font-family: 'Chivo', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    
+}
+.butt{
+    padding: 15px 25px;
+    margin: 20px 0px 0px 0px;
+    background: #654343;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.6s ease;
+}
+.butt:hover{
+    background: none;
+    color: black;
+}
+.first{
+    border:1px solid white
+}
+.second{
+    cursor: pointer;
+    border:1px solid white
+}
+.spacer{
+    height: 100px;
+}
+.carousel {
+    width: 60%;
+    max-height: 300px;
+    position: relative;
+    margin:10px auto;
+  }
+  .carousel-slides {
+    display: flex;
+    margin-bottom: 30px;
+  }
+  .slide {
+    display: none;
+  }
+  
+  .slide.active {
+    display: block;
+  }
+  .carousel-slides img {
+    width: 770px;
+    height: 350px;
+  } 
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  .prev {
+    left: 0;
+  }
+  .next {
+    right: 0;
+  }
+  .story-container {
+    margin:50px auto;
+    width: 70%;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+}
+
+.story-image {
+    flex: 1;
+    overflow: hidden;
+}
+
+.story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.story-text {
+    flex: 1;
+    padding: 20px;
+}
+
+.h2-about{
+    color: black;
+}
+
+p {
+    line-height: 1.6;
+}
+.menu{
+    margin: 50px auto;
+    width: 40%;
+    justify-content: space-evenly;
+}
+.categorys-of-menu{
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+.cate{
+    font-family: 'Chivo', sans-serif;
+    font-family: 'Oswald', sans-serif;
+    font-size: 25px;
+    border-radius: 15px;
+    padding: 3px 40px; 
+    background: #654343;
+    color: white;
+    font-weight: bold;
+}
+.cate:hover{
+    transition: 0.5s ease;
+    background: #555;
+    color: white;
+}
+.menu-box {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.menus{
+    width: 50%;
+    color: #fff;
+    margin: 40px auto;
+    padding-bottom: 50px;
+    padding-top: 20px;
+    border-radius: 20px;
+    background-image: url("Images/menuback2.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    font-family: 'Bungee Inline', sans-serif;
+    font-family: 'Hind Madurai', sans-serif;
+    font-family: 'Lilita One', sans-serif;
+    font-family: 'Nanum Myeongjo', serif;
+    font-family: 'Pinyon Script', cursive;
+    font-family: 'Playfair Display', serif;
+    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-family: 'Sigmar', sans-serif;
+    font-family: 'Sofia Sans Semi Condensed', sans-serif;
+}
+.items-of-menu{
+    width: 85%;
+    padding-bottom: 40px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+.menus-h2 {
+    margin:40px 0;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.drink-item {
+    display: flex;
+    margin: 15px 0;
+}
+
+.drink-item img {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.drink-details {
+    display: flex;
+    flex-direction: column;
+}
+.drink-details > p{
+    margin: 0;
+    padding: 0;
+}
+.drink-details > button{
+    margin: 0;
+    padding:2px 6px;
+    border-radius: 10px;
+    background-color: #008000;
+    color: #000000;
+    font-weight: bold;
+    width: 100px;
+}
+.drink-details > button:hover{
+    color: white;
+    background: #4caf50;
+}
+.item-name {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.item-price {
+    color: #008000; 
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.item-size {
+    color: #808080; 
+    font-size: 0.9em;
+}
+.pizza-menu{
+    display: none;
+}
+.pasta-menu{
+    display: none;
+} 
+#reservationBox {
+    display: none;
+    position: fixed;
+    top: 80px;
+    background: url(Images/menu-background-2.jpg);
+    background-size: cover;
+    right: 20px;
+    width: 250px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: white;
+    z-index: 1;
+}
+#date{
+    margin-bottom: 10px;
+    display:block;
+    height: 25px;
+    font-size: 15px;
+}
+#reservationBox h2 {
+    margin-top: 0;
+    font-size: calc(1.325rem + .9vw);
+}
+
+#closeButton {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 18px;
+    color: white;
+}
+
+#reserveButton {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.checkbox-label {
+    display: block;
+    margin-top: 10px;
+}
+.form-container {
+    width: 250px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: white;
+    background: url(Images/menu-background-2.jpg);
+}
+.form-container form {
+    display: flex;
+    flex-direction: column;
+}
+.form-container label, .form-container input, .form-container button {
+    margin-bottom: 10px;
+}
+.form-container button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.form-container button:hover {
+    background-color: #45a049;
+}
+.logsig{
+    display: flex;
+    margin-top: 60px;
+    justify-content: center;
+}
+.singup{
+    margin-bottom: 20px;
+}
+.form-container > h2{
+    text-align: center;
+}
+select .typeUser{
+    height: 20px;
+}
+.logreg{
+    display: flex;
+    gap: 10px;
+    justify-content:space-between;
+}
+.error{
+    color: white;
+}
+.error{
+    margin: 0;
+    color: red;
+    font-size: 9px;
+    display: none;
+}
+#singedUp{
+    cursor: pointer;
+}
+.conCard {
+    width: 50%;
+    margin: 50px auto;
+}
+.container-card {
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-h1 {
+    font-family: Arial, sans-serif;
+    color: #333;
+    text-align: center;
+}
+
+.card-elem {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.emriPro {
+    width: 180px;
+    font-weight: bold;
+    color: #333; 
+}
+
+.quantityCard {
+    width: 30px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.qmimi {
+    width: 30px;
+    font-size: 14px;
+    color: #888;
+}
+
+.bi-trash {
+    color: #FF5733; 
+    cursor: pointer;
+}
+.checkOutTotal {
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    justify-content: flex-end;
+    margin:10px 40px 0 0;
+}
+.button-container{
+    margin:10px 30px 0 0;
+    display: flex;
+    justify-content: flex-end;
+}
+.order-button {
+    background-color: #4CAF50; 
+    color: white; 
+    padding: 12px 24px; 
+    border: none; 
+    border-radius: 5px;
+    font-size: 16px; 
+    font-weight: bold; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+}
+.order-button:hover {
+    background-color: #45a049; 
+}
