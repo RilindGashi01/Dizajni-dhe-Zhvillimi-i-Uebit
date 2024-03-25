@@ -1,6 +1,5 @@
 <?php
 include "Header_Footer/Header.php";
-include "DBcon/db.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -61,7 +60,6 @@ include "DBcon/db.php";
                             $_SESSION['error']="There is one user logged in";
                         }else{$userRole= $pdo->prepare('INSERT INTO `loggedusers`(`Username`, `UserType`) VALUES (?,?)');
                             $userRole->execute([$logUsername,$logRole]);
-                            $_SESSION['logUsername']=$logUsername;
                             header("Location: index.php");
                         }
                     }else{

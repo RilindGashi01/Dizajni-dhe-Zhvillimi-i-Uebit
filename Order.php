@@ -1,6 +1,5 @@
 <?php
 include "Header_Footer/Header.php";
-include 'DBcon\db.php';
 ?>
 
 <!DOCTYPE html>
@@ -25,23 +24,37 @@ include 'DBcon\db.php';
     <title>Delicio</title>
 </head>
 <body>
-    <?php 
+     <?php 
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
-        $productName = isset($_POST['productName']) ? htmlspecialchars($_POST['productName']) : '';
-        $productPrice = isset($_POST['productPrice']) ? number_format($_POST['productPrice'], 2) : '';
+        $product_ID = isset($_POST['productID']) ? htmlspecialchars($_POST['productID']) : '';
 
-        $stm = $pdo->prepare('SELECT Emri_Produktit FROM `Karta` WHERE Emri_Produktit = :productName');
-        $stm->bindParam(':productName', $productName, PDO::PARAM_STR);
-        $stm->execute();
+            $stm = $pdo->prepare('SELECT * FROM `cart` WHERE ProductID = :productId');
+            $stm->bindParam(':productId', $product_ID, PDO::PARAM_STR);
+            $stm->execute();
+    
+            $result = $stm->fetch(PDO::FETCH_ASSOC);
+    
+            if (empty($result)) {
+                $userQuery = $pdo->prepare('SELECT * FROM `loggedusers`');
+                $userQuery->execute();
+                $result1 = $userQuery->fetch(PDO::FETCH_ASSOC);
+                if(!empty($result1) && $result1['UserType'] == 'User'){
+                    echo "Hello";
+                    $insertQuery = $pdo->prepare('INSERT INTO `cart`(`UserID`, `ProductID`) VALUES (?,?)');
+                    $insertQuery->execute([$result1['UserID'], $product_ID]);
+                }
+           }  
+        }
+        $userQuery = $pdo->prepare('SELECT * FROM `loggedusers`');
+        $userQuery->execute();
+        $result1 = $userQuery->fetch(PDO::FETCH_ASSOC);
+        if(empty($result1)){
+            $_SESSION['logIn']= "false";
+        }else{
+            $_SESSION['logIn']= "true";
+        }
 
-        $result = $stm->fetch(PDO::FETCH_ASSOC);
-
-        if ($result == false) {
-            $insertQuery = $pdo->prepare('INSERT INTO `Karta`(`Emri_Produktit`, `Qmimi`) VALUES (?, ?)');
-            $insertQuery->execute([$productName, $productPrice]);
-        }    
-    }
-    ?>
+    ?> 
 <div class="menu">
         <div class="categorys-of-menu">
             <button id="drink" class="cate drink">Drinks</button>
@@ -49,7 +62,6 @@ include 'DBcon\db.php';
             <button id="pizza" class="cate pizza">Pizza</button>
         </div>
     </div>    
-
         <div class="menus">
             <div class="drinks">
                     <h2 class="menus-h2">Drinks</h2>
@@ -65,7 +77,7 @@ include 'DBcon\db.php';
                                         <div class="drink-details">
                                             <p class="item-name"><?= $item['Name']; ?></p>
                                             <p class="item-price">$ <?= number_format($item['Price'],2); ?></p>
-                                            <button class="checkOutBtn" onclick="handleOrder('<?= $item['Name']; ?>','<?= number_format($item['Price'],2); ?>')" >Order</button>
+                                            <button class="checkOutBtn" onclick="handleOrder('<?php echo $item['ProductID']; ?>', <?php echo $_SESSION['logIn'] ?>)">Order</button>
                                         </div>
                                     </div>
                                 <?php endforeach; ?>
@@ -86,7 +98,7 @@ include 'DBcon\db.php';
                                         <div class="drink-details">
                                             <p class="item-name"><?= $item['Name']; ?></p>
                                             <p class="item-price">$ <?= number_format($item['Price'],2); ?></p>
-                                            <button class="checkOutBtn" onclick="handleOrder('<?= $item['Name']; ?>','<?= number_format($item['Price'],2); ?>')" >Order</button>
+                                            <button class="checkOutBtn" onclick="handleOrder('<?php echo $item['ProductID']; ?>', <?php echo $_SESSION['logIn'] ?>)">Order</button>
                                         </div>
                                     </div>
                         <?php endforeach; ?>
@@ -107,7 +119,7 @@ include 'DBcon\db.php';
                                         <div class="drink-details">
                                             <p class="item-name"><?= $item['Name']; ?></p>
                                             <p class="item-price">$ <?= number_format($item['Price'],2); ?></p>
-                                            <button class="checkOutBtn" onclick="handleOrder('<?= $item['Name']; ?>','<?= number_format($item['Price'],2); ?>')" >Order</button>
+                                            <button class="checkOutBtn" onclick="handleOrder('<?php echo $item['ProductID']; ?>', <?php echo $_SESSION['logIn'] ?>)">Order</button>
                                         </div>
                                     </div>
                         <?php endforeach; ?>

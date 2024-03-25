@@ -21,12 +21,14 @@ pasta.addEventListener('click', () => {
     drikns_menu.style.display = 'none';
     pizza_menu.style.display = 'none';
 })
-function handleOrder(productName, productPrice) {
+function handleOrder(productID,login) {
+    if(login == false){
+        alert("You need to log in first")
+        window.location.href = 'Log-In.php'
+    }
     var xhr = new XMLHttpRequest();
     var formData = new FormData();
-
-    formData.append('productName', productName);
-    formData.append('productPrice', productPrice);
+    formData.append('productID', productID);
 
     xhr.onreadystatechange = function(){
         if(xhr.readyState == XMLHttpRequest.DONE){
