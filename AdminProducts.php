@@ -19,6 +19,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <title>Delicio </title>
 </head>
 <body>
+   
+    <form action="submit_product.php" method="POST" enctype="multipart/form-data">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required><br><br>
+
+        <label for="price">Price:</label><br>
+        <input type="number" id="price" name="price" min="0" step="0.01" required><br><br>
+
+        <label for="category">Category:</label><br>
+        <input type="text" id="category" name="category" required><br><br>
+
+        <label for="image">Image:</label><br>
+        <input type="file" id="image" name="image" accept="image/*" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    </div>
     <div class="allresHis">
         <h1>All Reservations</h1>
         <div class="resDetails">
@@ -48,7 +65,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </div>
         </div>
     </div>
+    
     <script src="JavaScript/Admin.js"></script>
+    <div class="spacer"></div> 
 </body>
 </html>
 <?php

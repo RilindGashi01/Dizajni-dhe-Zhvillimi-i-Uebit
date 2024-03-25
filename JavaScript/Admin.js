@@ -20,3 +20,11 @@ function confirmDelete(deleteID) {
     };
     xhr.send(`delete_id=${deleteID}`);
 }
+function handlePro(){
+    const dis =document.getElementsByClassName('.productFol')
+    if(dis.style.display === 'none'){
+        dis.style.display = 'block';
+    }else{
+        dis.style.display = 'none';
+    }
+}
